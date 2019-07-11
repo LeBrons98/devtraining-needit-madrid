@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="8" type="collection">
+        <element label="Incident" max_length="32" name="incident" reference="incident" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Nigga" max_length="40" name="nigga" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="on hold reason" max_length="40" name="on_hold_reason" type="string">
+            <choice>
+                <element inactive_on_update="false" label="awaiting nigga" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="awaiting incident" sequence="2" value="2"/>
+            </choice>
+        </element>
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Requested for email" mandatory="true" max_length="40" name="u_requested_for_email" type="string"/>
