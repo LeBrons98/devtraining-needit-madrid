@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
     <sysevent_in_email_action action="INSERT_OR_UPDATE">
         <action>record_action</action>
-        <active>true</active>
+        <active>false</active>
         <assignment_operator/>
         <condition_script>email.subject.toLowerCase().indexOf('extend') &gt;= 0</condition_script>
         <description/>
@@ -15,10 +15,9 @@
         <script><![CDATA[(function runAction(/*GlideRecord*/ current, /*GlideRecord*/ event, /*EmailWrapper*/ email, /*ScopedEmailLogger*/ logger, /*EmailClassifier*/ classifier) {
 
 	// Implement email action here
-var day= new GlideDate();
-	
-	current.new_date=day;
-	current.state=2;
+var day= new GlideDateTime(current.due_date.getDisplayValue());
+	day.addMonthsUTC(1);
+	current.due_date=day.getDisplayValue();
 	current.update();
 })(current, event, email, logger, classifier);]]></script>
         <stop_processing>true</stop_processing>
@@ -28,7 +27,7 @@ var day= new GlideDate();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5a490f84db363300de7929464896194d</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>one more month </sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -36,7 +35,7 @@ var day= new GlideDate();
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sysevent_in_email_action_5a490f84db363300de7929464896194d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-07-17 23:44:50</sys_updated_on>
+        <sys_updated_on>2019-07-21 00:49:33</sys_updated_on>
         <table>x_58872_needit_needit_task</table>
         <template/>
         <type>reply</type>
