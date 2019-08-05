@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>false</active>
+        <api_name>x_58872_needit.catalog</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>catalog</name>
+        <script><![CDATA[var catalog = Class.create();
+catalog.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    
+	cat: function(){
+		var res="false";
+		var CI = this.getParameter('sysparm_class_name');
+	var gr= new GlideRecord('task');
+		gr.addQuery('cmdb_ci', CI);
+		gr.query();
+		
+		if(gr.next()){
+			var gr2 = new GlideRecord("cmdb_ci");
+			gr2.addQuery("sys_id", CI  );
+			gr2.query();
+			if(gr2.next()){
+				res = gr2.name;	
+			}
+		}
+		//gs.addInfoMessage(res);
+	return res;
+	
+	},
+
+	
+	type: 'catalog'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-07-26 02:45:33</sys_created_on>
+        <sys_id>8a4051f6dbb63300de792946489619d3</sys_id>
+        <sys_mod_count>85</sys_mod_count>
+        <sys_name>catalog</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_8a4051f6dbb63300de792946489619d3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-07-30 17:05:39</sys_updated_on>
+    </sys_script_include>
+</record_update>
