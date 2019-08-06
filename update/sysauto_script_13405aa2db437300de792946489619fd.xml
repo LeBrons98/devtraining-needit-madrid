@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>create a new record </name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-08-06 22:50:57</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[var gr= new GlideRecord('x_58872_needit_needit');
+gr.initialize();
+gr.number="NI002932";
+gr.priority=3;
+gr.state=14;
+gr.assigned_to="6816f79cc0a8016401c5a33be04be441";
+gr.short_description="esto es un test";
+gr.u_requested_for_email="naruto_ismarb@yahoo.com";
+gr.insert();
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-06 23:00:20</sys_created_on>
+        <sys_id>13405aa2db437300de792946489619fd</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>create a new record </sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sysauto_script_13405aa2db437300de792946489619fd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-08-06 23:30:19</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
